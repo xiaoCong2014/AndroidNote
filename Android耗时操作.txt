@@ -1,0 +1,35 @@
+No subscribers registered for event class com.test.MessageEvent
+
+import de.greenrobot.event.EventBus; 
+不是 org。。。。。那个包
+
+内存中要先有订阅者，然后发送者才能把信息发送到他那。
+A->B ，Activity A发送给B， 则B这个Activity要先有。
+可以配置B为app的启动页面，然后跳转到A，则此时内存中AB都有（先有B，再有A），然后A发送消息给B，最终B的吐司能在A页面上看到，在底部
+ 
+只能在Android中用
+Caused by: java.lang.ClassNotFoundException: android.os.Handler  
+
+
+RxJava
+RxBus
+EventBus      事件总线  compile 'org.greenrobot:eventbus:3.0.0'
+
+
+RxBus 名字看起来像一个库，但它并不是一个库，而是一种模式，它的思想是使用 RxJava 来实现了 EventBus ，不用 Otto 或者 EventBus（ GreenRobot 的）
+
+RxBus = RxJava 结合 EventBus
+
+
+Otto
+耗时操作：最上面，最优先使用    处理后台耗时操作
+本质上都是 开  新线程  new Thread()
+
+RxJava和RxBus代替EventBus  事件总线
+
+AsyncTask  是对（Thread+Handler）的封装
+Thread+Handler
+
+
+
+
